@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+
+  <!-- Robot pose -->
+  <arg name="x" default="0"/>
+  <arg name="y" default="0"/>
+  <arg name="z" default="0"/>
+  <arg name="roll" default="0"/>
+  <arg name="pitch" default="0"/>
+  <arg name="yaw" default="1.5708"/>
+
+  <!-- Launch other relevant files-->
+  <include file="$(find jhonan)/launch/robot_description.launch"/>
+
+  <!-- World File -->
+  <arg name="world_file" default="$(find jhonan)/worlds/empty.world"/>
+
+  <!-- Launch Gazebo World -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="use_sim_time" value="true"/>
+    <arg name="debug" value="false"/>
+    <arg name="gui" value="true" />
+    <arg name="world_name" value="$(arg world_file)"/>
+  </include>
+  <!-- Find my robot Description-->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find jhonan)/urdf/jhonan.xacro'"/>
+
+  <!-- Spawn My Robot -->
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" 
+        args="-urdf -param robot_description -model jhonan 
+              -x $(arg x) -y $(arg y) -z $(arg z)
+              -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"/>
+  
+<!--
+  <node name="rviz" pkg="rviz" type="rviz" respawn="false"
+        args="-d $(find jhonan)/default.rviz"/>-->
+
+  <!-- record grpund truth 
+  <node pkg="jhonan" type="odom_text_recorder.py" name="truth_text_recorder">
+      <param name="txt_path" value="/home/kesse/ground_truth.txt"/>
+      <param name="listen_to" value="/gazebo/ground_truth"/>
+      <param name="use_frame" value="map"/>
+      <param name="clear_file" value="true"/>
+      <param name="max_rate"  value="10.0"/>
+  </node>
+
+  <node pkg="jhonan" type="goal_publisher.py" name="goal_publisher">
+      <param name="goal_topic" value="/move_base_simple/goal"/>
+      <param name="frame_id" value="map"/>
+                                t     px      py      pz      ox
+   oy      oz      ow  
+      <rosparam param="values">   [2.0,  5.0,    5.0,    0.0,    0.0,
+   0.0,    0.0,    1.0,
+                                    40.0,  7.1,    3.5,    0.0,
+0.0,    0.0,    0.4,    0.9,
+                                    10.0,  6.5,    4.3,    0.0,
+0.0,    0.0,    1.0,    0.0,
+                                    10.0,  -1.9,   3.0,    0.0,
+0.0,    0.0,    0.0,    1.0,
+                                    75.0,  -0.8,   3.3,    0.0,
+0.0,    0.0,    0.4,    0.9,
+                                    10.0,  -1.0,   4.0,    0.0,
+0.0,    0.0,    1.0,    0.0,
+                                    10.0,  0.0,    0.0,    0.0,
+0.0,    0.0,    0.0,    1.0]
+      </rosparam>
+  </node>-->
+
+
+
+
+  
+
+</launch>
