@@ -35,4 +35,6 @@ Open another terminal you can install a algorithm for control the robot but afte
 
 `$ rosrun teleop_twist_keyboard teleop_twist_keyboard.py`
 
+If to find troubles or to have questions -> my Email: kesse_jonatas85@hotmail.com
+
 
