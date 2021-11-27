@@ -1,6 +1,6 @@
-published in LARS-2021 (IEEE Latin American Robotics Symposium) paper https://ieeexplore.ieee.org/document/9605432 
+Published in LARS-2021 (IEEE Latin American Robotics Symposium) paper https://ieeexplore.ieee.org/document/9605432 
 
-@INPROCEEDINGS{9605432,  author={de Jesus, Kesse Jonatas and Kobs, Henry Julio and Cukla, Anselmo Rafael and de Souza Leite Cuadros, Marco Antonio and Gamarra, Daniel Fernando Tello},  booktitle={2021 Latin American Robotics Symposium (LARS), 2021 Brazilian Symposium on Robotics (SBR), and 2021 Workshop on Robotics in Education (WRE)},   title={Comparison of Visual SLAM Algorithms ORB-SLAM2, RTAB-Map and SPTAM in Internal and External Environments with ROS},   year={2021},  volume={},  number={},  pages={216-221},  doi={10.1109/LARS/SBR/WRE54079.2021.9605432}}
+K. J. de Jesus, H. J. Kobs, A. R. Cukla, M. A. de Souza Leite Cuadros and D. F. T. Gamarra, "Comparison of Visual SLAM Algorithms ORB-SLAM2, RTAB-Map and SPTAM in Internal and External Environments with ROS," 2021 Latin American Robotics Symposium (LARS), 2021 Brazilian Symposium on Robotics (SBR), and 2021 Workshop on Robotics in Education (WRE), 2021, pp. 216-221, doi: 10.1109/LARS/SBR/WRE54079.2021.9605432.
 
 # Robot for research involving visual SLAM using ROS with RGB-D and stereo camera
 Robot differencial drive on ROS with RGB-D and stereo camera
