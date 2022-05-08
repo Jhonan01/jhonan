@@ -7,7 +7,7 @@ Robot differencial drive on ROS with RGB-D and stereo camera
 ![robot](https://user-images.githubusercontent.com/44379869/134515135-fe3c73ca-b777-48ba-820b-dfe1c67e1965.png)
 This robot it's a robot built for realize simulations on ROS (Robot Operating System) with the kinetic distribution in order to make simulations with VISUAL SLAM (vSLAM) using RGB-D and stereo camera. 
 
-Please cite the following paper if you use this project in your research: (Coming soon)
+Please cite the following paper if you use this project in your research: https://ieeexplore.ieee.org/document/9605432
 
 # 1. Quick Start
 
